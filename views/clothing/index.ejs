@@ -1,0 +1,14 @@
+<%- include('../partials/head') %>
+
+<div style="background-color: lightblue; padding: 10px;">
+    <a href="/clothing/new" style="text-decoration: none; font-weight: 500;">Add Item ►</a>
+</div>
+    <h2>Favorite List</h2>
+    <ul>
+      <% clothing.forEach(cloth => { %>
+        <li><a href="/clothing/<%= cloth._id %>"><%= cloth.name %></a></li>
+      <% }); %>
+    </ul>
+
+<%- include('../partials/footer') %>
+

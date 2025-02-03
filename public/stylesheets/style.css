@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: beige;
+    margin: 0px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 40vw;
+}
+
+form button {
+    margin-top: 10px;
+}

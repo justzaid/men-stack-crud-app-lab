@@ -1,0 +1,21 @@
+<%- include('../partials/head') %>
+
+<a href="/clothing">Back to List</a>
+
+    <h1>Edit <%= cloth.name %></h1>
+    <form action="/clothing/<%= cloth._id%>?_method=PUT" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" value="<%= cloth.name %>" />
+  
+      <label for="addToCart">Add or remove from cart</label>
+      <input type="checkbox" name="addToCart" id="addToCart" 
+      <% if (cloth.addToCart) { %>
+      checked
+      <% } %>
+        />
+        
+      <!-- update the button text -->
+      <button type="submit">Update Item</button>
+    </form>
+
+<%- include('../partials/footer') %>
