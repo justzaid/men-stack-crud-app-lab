@@ -1,21 +1,21 @@
 <%- include('../partials/head') %>
 
-<a href="/clothing">Back to List</a>
 
+<div class="top-nav">
+<a href="/clothing">◄ Back to List</a>
+</div>
     <h1>Edit <%= cloth.name %></h1>
     <form action="/clothing/<%= cloth._id%>?_method=PUT" method="POST">
       <label for="name">Name:</label>
-      <input type="text" name="name" id="name" value="<%= cloth.name %>" />
+      <input type="text" name="name" id="name"  size="35" value="<%= cloth.name %>" />
   
-      <label for="addToCart">Add or remove from cart</label>
-      <input type="checkbox" name="addToCart" id="addToCart" 
-      <% if (cloth.addToCart) { %>
+      <label for="addedToCart">Add or Remove from checkout</label>
+      <input type="checkbox" name="addedToCart" id="addedToCart" 
+      <% if (cloth.addedToCart) { %>
       checked
       <% } %>
         />
-        
-      <!-- update the button text -->
       <button type="submit">Update Item</button>
     </form>
-
 <%- include('../partials/footer') %>
+

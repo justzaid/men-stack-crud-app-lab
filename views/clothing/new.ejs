@@ -1,15 +1,16 @@
 <%- include('../partials/head') %>
 
-<div style="background-color: lightblue; padding: 10px;">
-    <a href="/clothing" style="text-decoration: none; font-weight: 500;">◄ Back to clothing</a>
+<div class="top-nav">
+    <a href="/clothing">◄ Back to clothing</a>
 </div>
+
     <h2>Add a new item</h2>
 
     <form action="/clothing" method="POST">
       <label for="name">Name:</label>
       <input type="text" name="name" id="name" />
   
-      <label for="addToCart">Add to cart?</label>
+      <label for="addToCart">Add to list?</label>
       <input type="checkbox" name="addToCart" id="addToCart" />
   
       <button type="submit">Add Item</button>

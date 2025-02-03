@@ -1,26 +1,22 @@
-const dotenv = require('dotenv')
-dotenv.config();
+require('dotenv').config()
 const express = require('express');
+const app = express();
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const morgan = require('morgan');
+const path = require('path')
 
-const app = express();
 
 // Connect to MongoDB using the connection string in the .env file
 mongoose.connect(process.env.MONGODB_URI);
-
-// log connection status to terminal on start
 mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
-// Model import
-const Cloth = require('./models/clothing');
-
 // Middleware
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride('_method'));
 
 // Import controller functions

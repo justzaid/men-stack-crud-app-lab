@@ -14,10 +14,10 @@ const newCloth = (req, res) => {
 }
 
 const postCloth = async (req, res) => {
-    if (req.body.addToCart === "on") {
-        req.body.addToCart = true;
+    if (req.body.addedToCart === "on") {
+        req.body.addedToCart = true;
     } else {
-        req.body.addToCart = false;
+        req.body.addedToCart = false;
     }
     await Cloth.create(req.body);
     res.redirect('clothing')
@@ -41,11 +41,10 @@ const editCloth = async (req, res) => {
 };
 
 const updateCloth = async (req, res) => {
-    // Handle the 'isReadyToEat' checkbox data
-    if (req.body.addToCart === "on") {
-      req.body.addToCart = true;
+    if (req.body.addedToCart === "on") {
+      req.body.addedToCart = true;
     } else {
-      req.body.addToCart = false;
+      req.body.addedToCart = false;
     }
     await Cloth.findByIdAndUpdate(req.params.clothId, req.body);
     res.redirect(`/clothing/${req.params.clothId}`);

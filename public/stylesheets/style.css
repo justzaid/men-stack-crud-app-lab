@@ -1,16 +1,27 @@
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     background-color: beige;
     margin: 0px;
 }
 
-form {
+.container {
     display: flex;
     flex-direction: column;
-    max-width: 40vw;
+    align-items: center;
 }
 
 form button {
     margin-top: 10px;
 }
+
+.top-nav {
+    background-color: lightblue;
+    padding: 10px;
+}
+
+.top-nav a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
